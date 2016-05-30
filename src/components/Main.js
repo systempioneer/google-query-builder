@@ -2,15 +2,32 @@ require('normalize.css/normalize.css');
 require('styles/App.css');
 
 import React from 'react';
-
-let yeomanImage = require('../images/yeoman.png');
+import KeywordsInputs from '../containers/KeywordsInputs'
+import SearchModifierInputs from '../containers/SearchModifierInputs'
+import ExecuteSearchButton from '../containers/ExecuteSearchButton'
+import Permalink from '../containers/Permalink'
 
 class AppComponent extends React.Component {
   render() {
     return (
-      <div className="index">
-        <img src={yeomanImage} alt="Yeoman Generator" />
-        <div className="notice">Please edit <code>src/components/Main.js</code> to get started!</div>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-md-4 col-sm-12">
+            <h1>Google Query Builder</h1>
+            <KeywordsInputs />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-xs-12">
+            <SearchModifierInputs />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-xs-12">
+            <ExecuteSearchButton />
+            <Permalink />
+          </div>
+        </div>
       </div>
     );
   }
