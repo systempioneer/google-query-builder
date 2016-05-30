@@ -1,11 +1,16 @@
 import ExecuteSearchButton from '../components/ExecuteSearchButton'
 
 import { connect } from 'react-redux'
+import { executeSearch } from '../actions/const'
 
-function mapStateToProps(state) {
-  return {};
+export const mapStateToProps = (state) => {
+  return {}
 }
-function mapDispatchToProps(dispatch) {
-  return {};
+export const mapDispatchToProps = (dispatch) => {
+  return {
+    executeSearch: () => {
+      dispatch(executeSearch())
+    }
+  }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(ExecuteSearchButton);
+export default connect(mapStateToProps, mapDispatchToProps)(ExecuteSearchButton)

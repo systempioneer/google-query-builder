@@ -6,6 +6,7 @@ export const SET_KEYWORDS = "SET_KEYWORDS"
 export const ADD_KEYWORD = "ADD_KEYWORD"
 export const REMOVE_KEYWORD = "REMOVE_KEYWORD"
 export const SET_KEYWORD = "SET_KEYWORD"
+export const EXECUTE_SEARCH = "EXECUTE_SEARCH"
 
 export function addKeywordInputField() {
   return {
@@ -44,5 +45,11 @@ export function setKeyword(value) {
   return {
     type: SET_KEYWORD,
     value: value
+  }
+}
+
+export function executeSearch() {
+  return {
+    type: EXECUTE_SEARCH
   }
 }

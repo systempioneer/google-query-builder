@@ -39,4 +39,8 @@ describe('action creators', () => {
     expect(Actions.setKeyword(testValue).type).to.equal(Actions.SET_KEYWORD)
     expect(Actions.setKeyword(testValue).value).to.equal(testValue)
   })
+
+  it('should handle executeSearch', () => {
+    expect(Actions.executeSearch().type).to.equal(Actions.EXECUTE_SEARCH)
+  })
 })

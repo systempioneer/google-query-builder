@@ -13,7 +13,7 @@ let initialState = {
   numberOfInputs: 1,
   keywords: [''],
   searchModifierPresets: [
-    { name: 'Search Only Forums', value: 'intext: forum' }
+    { name: 'Search Only Forums', value: 'intext:forum “post”|inurl:forum|”posts:”|inurl:viewtopic' }
   ]
 }
 
@@ -77,7 +77,14 @@ actionHandlers.push((state, action) => {
     })
   }
 })
-
+actionHandlers.push((state, action) => {
+  if(action.type === Actions.EXECUTE_SEARCH) {
+    state.keywords.forEach((keyword) => {
+      window.open(encodeURI('https://www.google.com/#q=' + keyword + " " + state.searchModifier || "", '_blank'))
+    })
+    return state
+  }
+})
 
 const reducers = {
   googleQuery: (state = initialState, action) => {
