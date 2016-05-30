@@ -44,7 +44,9 @@ module.exports = {
       actions: srcPath + 'actions/',
       helpers: path.join(__dirname, '/../test/helpers'),
       components: srcPath + 'components/',
+      containers: srcPath + 'containers/',
       sources: srcPath + 'sources/',
+      reducers: srcPath + 'reducers/',
       stores: srcPath + 'stores/',
       styles: srcPath + 'styles/',
       config: srcPath + 'config/' + process.env.REACT_WEBPACK_ENV
